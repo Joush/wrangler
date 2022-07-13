@@ -1,0 +1,34 @@
+# Install homebrew if you don't have it yet.
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Opt out from sending analytics data to homebrew.
+brew analytics off
+
+# Install tools.
+brew install \
+    awscli \
+    azure-cli \
+    coreutils \
+    docker \
+    go \
+    google-cloud-sdk \
+    gpg \
+    helm \
+    jq \
+    kind \
+    kube-linter \
+    kubectl \
+    kustomize \
+    pulumi \
+    terraform \
+    terragrunt \
+    vault
+    
+    # scanning tools
+brew install pre-commit
+brew install git-secrets
+pip3 install detect-secrets
+
+# install pre-commits on every git clone
+git config --global init.templateDir ~/.git-template
+pre-commit init-templatedir ~/.git-template
